@@ -1,0 +1,15 @@
+/root/code/sebasfourn/ConsoleAccounting/bin/Debug/net7.0/ConsoleAccounting
+/root/code/sebasfourn/ConsoleAccounting/bin/Debug/net7.0/ConsoleAccounting.deps.json
+/root/code/sebasfourn/ConsoleAccounting/bin/Debug/net7.0/ConsoleAccounting.runtimeconfig.json
+/root/code/sebasfourn/ConsoleAccounting/bin/Debug/net7.0/ConsoleAccounting.dll
+/root/code/sebasfourn/ConsoleAccounting/bin/Debug/net7.0/ConsoleAccounting.pdb
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/ConsoleAccounting.csproj.AssemblyReference.cache
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/ConsoleAccounting.GeneratedMSBuildEditorConfig.editorconfig
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/ConsoleAccounting.AssemblyInfoInputs.cache
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/ConsoleAccounting.AssemblyInfo.cs
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/ConsoleAccounting.csproj.CoreCompileInputs.cache
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/ConsoleAccounting.dll
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/refint/ConsoleAccounting.dll
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/ConsoleAccounting.pdb
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/ConsoleAccounting.genruntimeconfig.cache
+/root/code/sebasfourn/ConsoleAccounting/obj/Debug/net7.0/ref/ConsoleAccounting.dll
