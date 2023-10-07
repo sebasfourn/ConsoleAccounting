@@ -1,33 +1,28 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Account;
 
-House house1 = new House(2002, 7000);
-Console.WriteLine(house1.CanBeSold(house1.Year));
+Console.WriteLine("Welcome to the Accounting System 1.0.");
 
-class House
-{
-  public House (int year, int size)
-  {
-    Year = year;
-    Size = size;
-  }
+Checking newChecking = new Checking(); // object/instance
+newChecking.Id = 100;
 
-  public int Year { get; set; }
-  public int Size { get; set; }
+Premium newPremium = new Premium();
+newPremium.Id = 200;
 
-  private int HowOld(int year)
-  {
-    return DateTime.Now.Year - year;
-  }
+newChecking.Output();
+newPremium.Output();
 
-  public bool CanBeSold(int year)
-  {
-    if (HowOld(year) > 15)
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
-  }
-}
+newChecking.Deposit(2000);
+newPremium.Deposit(6000);
+newChecking.Output();
+newPremium.Output();
+
+newPremium.Transfert(2000);
+newChecking.Output();
+newPremium.Output();
+
+decimal checkingInterest = newChecking.Interest(3m);
+decimal premiumInterest = newPremium.Interest(3m);
+Console.WriteLine($"Account1 interest: {checkingInterest}");
+Console.WriteLine($"Account2 interest: {premiumInterest}");
+newChecking.Output();
+newPremium.Output();
