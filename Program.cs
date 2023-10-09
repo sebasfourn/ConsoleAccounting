@@ -12,10 +12,10 @@ do
 
   if (choice == 1)
   {
-    Checking newChecking = new Checking(); // object/instance
+    var newChecking = new Checking(); // object/instance
     newChecking.Id = 100;
 
-    Premium newPremium = new Premium();
+    var newPremium = new Premium();
     newPremium.Id = 200;
 
     int userChoice = 0;
@@ -54,6 +54,10 @@ do
             case 2:
               newPremium.Deposit(depositAmount);
             break;
+
+            default:
+              Console.WriteLine("Wrong option!");
+            break;
           }
         break;
 
@@ -71,11 +75,15 @@ do
           switch (transfertAccountChoice)
           {
             case 1:
-              newChecking.Transfert(transfertAmount);
+              newChecking.Transfert(transfertAmount, newPremium);
             break;
 
             case 2:
-              newPremium.Transfert(transfertAmount);
+              newPremium.Transfert(transfertAmount, newChecking);
+            break;
+
+            default:
+              Console.WriteLine("Wrong option!");
             break;
           }
         break;
@@ -86,6 +94,10 @@ do
           decimal interest = decimal.Parse(interestString);
           Console.WriteLine($"Checking account interests: {newChecking.Interest(interest)}$");
           Console.WriteLine($"Premium account interests: {newPremium.Interest(interest)}$");
+        break;
+
+        default:
+          Console.WriteLine("Wrong option!");
         break;
       }
     } while (userChoice != 4);

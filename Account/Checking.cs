@@ -29,10 +29,9 @@ public class Checking
     return interest;
   }
 
-  public void Transfert(decimal value)
+  public void Transfert(decimal value, Premium premium)
   {
     Balance -= value;
-    Premium premiumInstance = new Premium();
-    premiumInstance.Balance += value;
+    premium.Balance += value;
   }
 }

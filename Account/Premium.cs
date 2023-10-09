@@ -9,10 +9,9 @@ public class Premium : Checking
     return interest;
   }
 
-  public void Transfert(decimal value)
+  public void Transfert(decimal value, Checking checking)
   {
     Balance -= value;
-    Checking checkingInstance = new Checking();
-    checkingInstance.Balance += value;
+    checking.Balance += value;
   }
 }
