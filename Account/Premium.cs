@@ -8,4 +8,11 @@ public class Premium : Checking
     Balance += interest;
     return interest;
   }
+
+  public void Transfert(decimal value)
+  {
+    Balance -= value;
+    Checking checkingInstance = new Checking();
+    checkingInstance.Balance += value;
+  }
 }

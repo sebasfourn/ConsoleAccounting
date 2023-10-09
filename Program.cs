@@ -1,28 +1,95 @@
 ﻿using Account;
 
-Console.WriteLine("Welcome to the Accounting System 1.0.");
+int choice = 0;
 
-Checking newChecking = new Checking(); // object/instance
-newChecking.Id = 100;
+do
+{
+  Console.WriteLine("Welcome to the Accounting System 1.0.");
+  Console.WriteLine("1. Start");
+  Console.WriteLine("2. Quit");
+  string choiceString = Console.ReadLine();
+  choice = int.Parse(choiceString);
 
-Premium newPremium = new Premium();
-newPremium.Id = 200;
+  if (choice == 1)
+  {
+    Checking newChecking = new Checking(); // object/instance
+    newChecking.Id = 100;
 
-newChecking.Output();
-newPremium.Output();
+    Premium newPremium = new Premium();
+    newPremium.Id = 200;
 
-newChecking.Deposit(2000);
-newPremium.Deposit(6000);
-newChecking.Output();
-newPremium.Output();
+    int userChoice = 0;
 
-newPremium.Transfert(2000);
-newChecking.Output();
-newPremium.Output();
+    do
+    {
+      newChecking.Output();
+      newPremium.Output();
 
-decimal checkingInterest = newChecking.Interest(3m);
-decimal premiumInterest = newPremium.Interest(3m);
-Console.WriteLine($"Account1 interest: {checkingInterest}");
-Console.WriteLine($"Account2 interest: {premiumInterest}");
-newChecking.Output();
-newPremium.Output();
+      Console.WriteLine("1. Make a deposit");
+      Console.WriteLine("2. Make a transfert");
+      Console.WriteLine("3. Add interests");
+      Console.WriteLine("4. Go back");
+      string userChoiceString = Console.ReadLine();
+      userChoice = int.Parse(userChoiceString);
+
+      switch (userChoice)
+      {
+        case 1:
+          Console.WriteLine("Choose the account:");
+          Console.WriteLine("1. Checking");
+          Console.WriteLine("2. Premium");
+          string depositAccountChoiceString = Console.ReadLine();
+          int depositAccountChoice = int.Parse(depositAccountChoiceString);
+
+          Console.WriteLine("Enter the amount:");
+          string depositAmountString = Console.ReadLine();
+          decimal depositAmount = decimal.Parse(depositAmountString);
+
+          switch (depositAccountChoice)
+          {
+            case 1:
+              newChecking.Deposit(depositAmount);
+            break;
+
+            case 2:
+              newPremium.Deposit(depositAmount);
+            break;
+          }
+        break;
+
+        case 2:
+          Console.WriteLine("From which account:");
+          Console.WriteLine("1. Checking");
+          Console.WriteLine("2. Premium");
+          string transfertAccountChoiceString = Console.ReadLine();
+          int transfertAccountChoice = int.Parse(transfertAccountChoiceString);
+
+          Console.WriteLine("Enter the amount:");
+          string transfertAmountString = Console.ReadLine();
+          int transfertAmount = int.Parse(transfertAmountString);
+
+          switch (transfertAccountChoice)
+          {
+            case 1:
+              newChecking.Transfert(transfertAmount);
+            break;
+
+            case 2:
+              newPremium.Transfert(transfertAmount);
+            break;
+          }
+        break;
+
+        case 3:
+          Console.WriteLine("Enter the %:");
+          string interestString = Console.ReadLine();
+          decimal interest = decimal.Parse(interestString);
+          Console.WriteLine($"Checking account interests: {newChecking.Interest(interest)}$");
+          Console.WriteLine($"Premium account interests: {newPremium.Interest(interest)}$");
+        break;
+      }
+    } while (userChoice != 4);
+  }
+} while (choice != 2);
+
+Console.WriteLine("Goodbye!");

@@ -7,7 +7,14 @@ public class Checking
 
   public void Output()
   {
-    Console.WriteLine($"The account with id '{Id}' has a balance of: {Balance}");
+    if (Id == 100)
+    {
+      Console.WriteLine($"Checking account balance: {Balance}$");
+    }
+    else if (Id == 200)
+    {
+      Console.WriteLine($"Premium account balance: {Balance}$");
+    }
   }
 
   public void Deposit(decimal value)
@@ -25,5 +32,7 @@ public class Checking
   public void Transfert(decimal value)
   {
     Balance -= value;
+    Premium premiumInstance = new Premium();
+    premiumInstance.Balance += value;
   }
 }
