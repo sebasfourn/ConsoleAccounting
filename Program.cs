@@ -75,11 +75,11 @@ do
           switch (transfertAccountChoice)
           {
             case 1:
-              newChecking.Transfert(transfertAmount, newPremium);
+              newChecking.Transfert(transfertAmount, ref newPremium);
             break;
 
             case 2:
-              newPremium.Transfert(transfertAmount, newChecking);
+              newPremium.Transfert(transfertAmount, ref newChecking);
             break;
 
             default:
