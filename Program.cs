@@ -15,15 +15,15 @@ do
     var newChecking = new Checking(); // object/instance
     newChecking.Id = 100;
 
-    var newPremium = new Premium();
-    newPremium.Id = 200;
+    var newSaving = new Saving();
+    newSaving.Id = 200;
 
     int userChoice = 0;
 
     do
     {
       newChecking.Output();
-      newPremium.Output();
+      newSaving.Output();
 
       Console.WriteLine("1. Make a deposit");
       Console.WriteLine("2. Make a transfert");
@@ -37,7 +37,7 @@ do
         case 1:
           Console.WriteLine("Choose the account:");
           Console.WriteLine("1. Checking");
-          Console.WriteLine("2. Premium");
+          Console.WriteLine("2. Saving");
           string depositAccountChoiceString = Console.ReadLine();
           int depositAccountChoice = int.Parse(depositAccountChoiceString);
 
@@ -52,7 +52,7 @@ do
             break;
 
             case 2:
-              newPremium.Deposit(depositAmount);
+              newSaving.Deposit(depositAmount);
             break;
 
             default:
@@ -64,7 +64,7 @@ do
         case 2:
           Console.WriteLine("From which account:");
           Console.WriteLine("1. Checking");
-          Console.WriteLine("2. Premium");
+          Console.WriteLine("2. Saving");
           string transfertAccountChoiceString = Console.ReadLine();
           int transfertAccountChoice = int.Parse(transfertAccountChoiceString);
 
@@ -75,11 +75,11 @@ do
           switch (transfertAccountChoice)
           {
             case 1:
-              newChecking.Transfert(transfertAmount, ref newPremium);
+              newChecking.Transfert(transfertAmount, ref newSaving);
             break;
 
             case 2:
-              newPremium.Transfert(transfertAmount, ref newChecking);
+              newSaving.Transfert(transfertAmount, ref newChecking);
             break;
 
             default:
@@ -92,8 +92,8 @@ do
           Console.WriteLine("Enter the %:");
           string interestString = Console.ReadLine();
           decimal interest = decimal.Parse(interestString);
-          Console.WriteLine($"Checking account interests: {newChecking.Interest(interest)}$");
-          Console.WriteLine($"Premium account interests: {newPremium.Interest(interest)}$");
+          Console.WriteLine($"Checking interests: {newChecking.Interest(interest)}$");
+          Console.WriteLine($"Saving interests: {newSaving.Interest(interest)}$");
         break;
 
         default:

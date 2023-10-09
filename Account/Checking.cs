@@ -9,11 +9,11 @@ public class Checking
   {
     if (Id == 100)
     {
-      Console.WriteLine($"Checking account balance: {Balance}$");
+      Console.WriteLine($"Checking balance: {Balance}$");
     }
     else if (Id == 200)
     {
-      Console.WriteLine($"Premium account balance: {Balance}$");
+      Console.WriteLine($"Saving balance: {Balance}$");
     }
   }
 
@@ -29,9 +29,9 @@ public class Checking
     return interest;
   }
 
-  public void Transfert(decimal value, ref Premium premium)
+  public void Transfert(decimal value, ref Saving saving)
   {
     Balance -= value;
-    premium.Balance += value;
+    saving.Balance += value;
   }
 }

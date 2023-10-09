@@ -1,6 +1,6 @@
 namespace Account;
 
-public class Premium : Checking
+public class Saving : Checking
 {
   public decimal Interest(decimal value)
   {
